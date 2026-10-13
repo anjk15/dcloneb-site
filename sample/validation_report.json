@@ -1,0 +1,1416 @@
+{
+  "in_memory": {
+    "checks": [
+      {
+        "check": "row_count",
+        "constraint": "25 rows",
+        "rows_checked": 25,
+        "samples": [],
+        "table": "categories",
+        "violations": 0
+      },
+      {
+        "check": "columns",
+        "constraint": "id Int32, name String",
+        "rows_checked": 2,
+        "samples": [],
+        "table": "categories",
+        "violations": 0
+      },
+      {
+        "check": "type_limits",
+        "constraint": "id SERIAL",
+        "rows_checked": 25,
+        "samples": [],
+        "table": "categories",
+        "violations": 0
+      },
+      {
+        "check": "type_limits",
+        "constraint": "name VARCHAR(40)",
+        "rows_checked": 25,
+        "samples": [],
+        "table": "categories",
+        "violations": 0
+      },
+      {
+        "check": "not_null",
+        "constraint": "id NOT NULL",
+        "rows_checked": 25,
+        "samples": [],
+        "table": "categories",
+        "violations": 0
+      },
+      {
+        "check": "not_null",
+        "constraint": "name NOT NULL",
+        "rows_checked": 25,
+        "samples": [],
+        "table": "categories",
+        "violations": 0
+      },
+      {
+        "check": "primary_key",
+        "constraint": "PRIMARY KEY (id)",
+        "rows_checked": 25,
+        "samples": [],
+        "table": "categories",
+        "violations": 0
+      },
+      {
+        "check": "unique",
+        "constraint": "UNIQUE (name)",
+        "rows_checked": 25,
+        "samples": [],
+        "table": "categories",
+        "violations": 0
+      },
+      {
+        "check": "row_count",
+        "constraint": "25 rows",
+        "rows_checked": 25,
+        "samples": [],
+        "table": "customers",
+        "violations": 0
+      },
+      {
+        "check": "columns",
+        "constraint": "id Int32, email String, first_name String, last_name String, city String, signed_up Date",
+        "rows_checked": 6,
+        "samples": [],
+        "table": "customers",
+        "violations": 0
+      },
+      {
+        "check": "type_limits",
+        "constraint": "id SERIAL",
+        "rows_checked": 25,
+        "samples": [],
+        "table": "customers",
+        "violations": 0
+      },
+      {
+        "check": "type_limits",
+        "constraint": "email VARCHAR(100)",
+        "rows_checked": 25,
+        "samples": [],
+        "table": "customers",
+        "violations": 0
+      },
+      {
+        "check": "type_limits",
+        "constraint": "first_name VARCHAR(50)",
+        "rows_checked": 25,
+        "samples": [],
+        "table": "customers",
+        "violations": 0
+      },
+      {
+        "check": "type_limits",
+        "constraint": "last_name VARCHAR(50)",
+        "rows_checked": 25,
+        "samples": [],
+        "table": "customers",
+        "violations": 0
+      },
+      {
+        "check": "type_limits",
+        "constraint": "city VARCHAR(50)",
+        "rows_checked": 25,
+        "samples": [],
+        "table": "customers",
+        "violations": 0
+      },
+      {
+        "check": "type_limits",
+        "constraint": "signed_up DATE",
+        "rows_checked": 25,
+        "samples": [],
+        "table": "customers",
+        "violations": 0
+      },
+      {
+        "check": "not_null",
+        "constraint": "id NOT NULL",
+        "rows_checked": 25,
+        "samples": [],
+        "table": "customers",
+        "violations": 0
+      },
+      {
+        "check": "not_null",
+        "constraint": "email NOT NULL",
+        "rows_checked": 25,
+        "samples": [],
+        "table": "customers",
+        "violations": 0
+      },
+      {
+        "check": "not_null",
+        "constraint": "first_name NOT NULL",
+        "rows_checked": 25,
+        "samples": [],
+        "table": "customers",
+        "violations": 0
+      },
+      {
+        "check": "not_null",
+        "constraint": "last_name NOT NULL",
+        "rows_checked": 25,
+        "samples": [],
+        "table": "customers",
+        "violations": 0
+      },
+      {
+        "check": "not_null",
+        "constraint": "signed_up NOT NULL",
+        "rows_checked": 25,
+        "samples": [],
+        "table": "customers",
+        "violations": 0
+      },
+      {
+        "check": "primary_key",
+        "constraint": "PRIMARY KEY (id)",
+        "rows_checked": 25,
+        "samples": [],
+        "table": "customers",
+        "violations": 0
+      },
+      {
+        "check": "unique",
+        "constraint": "UNIQUE (email)",
+        "rows_checked": 25,
+        "samples": [],
+        "table": "customers",
+        "violations": 0
+      },
+      {
+        "check": "row_count",
+        "constraint": "25 rows",
+        "rows_checked": 25,
+        "samples": [],
+        "table": "employees",
+        "violations": 0
+      },
+      {
+        "check": "columns",
+        "constraint": "id Int32, first_name String, last_name String, manager_id Int32",
+        "rows_checked": 4,
+        "samples": [],
+        "table": "employees",
+        "violations": 0
+      },
+      {
+        "check": "type_limits",
+        "constraint": "id SERIAL",
+        "rows_checked": 25,
+        "samples": [],
+        "table": "employees",
+        "violations": 0
+      },
+      {
+        "check": "type_limits",
+        "constraint": "first_name VARCHAR(50)",
+        "rows_checked": 25,
+        "samples": [],
+        "table": "employees",
+        "violations": 0
+      },
+      {
+        "check": "type_limits",
+        "constraint": "last_name VARCHAR(50)",
+        "rows_checked": 25,
+        "samples": [],
+        "table": "employees",
+        "violations": 0
+      },
+      {
+        "check": "type_limits",
+        "constraint": "manager_id INT",
+        "rows_checked": 25,
+        "samples": [],
+        "table": "employees",
+        "violations": 0
+      },
+      {
+        "check": "not_null",
+        "constraint": "id NOT NULL",
+        "rows_checked": 25,
+        "samples": [],
+        "table": "employees",
+        "violations": 0
+      },
+      {
+        "check": "not_null",
+        "constraint": "first_name NOT NULL",
+        "rows_checked": 25,
+        "samples": [],
+        "table": "employees",
+        "violations": 0
+      },
+      {
+        "check": "not_null",
+        "constraint": "last_name NOT NULL",
+        "rows_checked": 25,
+        "samples": [],
+        "table": "employees",
+        "violations": 0
+      },
+      {
+        "check": "primary_key",
+        "constraint": "PRIMARY KEY (id)",
+        "rows_checked": 25,
+        "samples": [],
+        "table": "employees",
+        "violations": 0
+      },
+      {
+        "check": "foreign_key",
+        "constraint": "FOREIGN KEY (manager_id) -> employees (id) MATCH SIMPLE",
+        "rows_checked": 25,
+        "samples": [],
+        "table": "employees",
+        "violations": 0
+      },
+      {
+        "check": "row_count",
+        "constraint": "25 rows",
+        "rows_checked": 25,
+        "samples": [],
+        "table": "order_items",
+        "violations": 0
+      },
+      {
+        "check": "columns",
+        "constraint": "order_id Int32, product_id Int32, quantity Int16, unit_price Decimal(precision=10, scale=2)",
+        "rows_checked": 4,
+        "samples": [],
+        "table": "order_items",
+        "violations": 0
+      },
+      {
+        "check": "type_limits",
+        "constraint": "order_id INT",
+        "rows_checked": 25,
+        "samples": [],
+        "table": "order_items",
+        "violations": 0
+      },
+      {
+        "check": "type_limits",
+        "constraint": "product_id INT",
+        "rows_checked": 25,
+        "samples": [],
+        "table": "order_items",
+        "violations": 0
+      },
+      {
+        "check": "type_limits",
+        "constraint": "quantity SMALLINT",
+        "rows_checked": 25,
+        "samples": [],
+        "table": "order_items",
+        "violations": 0
+      },
+      {
+        "check": "type_limits",
+        "constraint": "unit_price DECIMAL(10, 2)",
+        "rows_checked": 25,
+        "samples": [],
+        "table": "order_items",
+        "violations": 0
+      },
+      {
+        "check": "not_null",
+        "constraint": "order_id NOT NULL",
+        "rows_checked": 25,
+        "samples": [],
+        "table": "order_items",
+        "violations": 0
+      },
+      {
+        "check": "not_null",
+        "constraint": "product_id NOT NULL",
+        "rows_checked": 25,
+        "samples": [],
+        "table": "order_items",
+        "violations": 0
+      },
+      {
+        "check": "not_null",
+        "constraint": "quantity NOT NULL",
+        "rows_checked": 25,
+        "samples": [],
+        "table": "order_items",
+        "violations": 0
+      },
+      {
+        "check": "not_null",
+        "constraint": "unit_price NOT NULL",
+        "rows_checked": 25,
+        "samples": [],
+        "table": "order_items",
+        "violations": 0
+      },
+      {
+        "check": "primary_key",
+        "constraint": "PRIMARY KEY (order_id, product_id)",
+        "rows_checked": 25,
+        "samples": [],
+        "table": "order_items",
+        "violations": 0
+      },
+      {
+        "check": "foreign_key",
+        "constraint": "FOREIGN KEY (order_id) -> orders (id) MATCH SIMPLE",
+        "rows_checked": 25,
+        "samples": [],
+        "table": "order_items",
+        "violations": 0
+      },
+      {
+        "check": "foreign_key",
+        "constraint": "FOREIGN KEY (product_id) -> products (id) MATCH SIMPLE",
+        "rows_checked": 25,
+        "samples": [],
+        "table": "order_items",
+        "violations": 0
+      },
+      {
+        "check": "row_count",
+        "constraint": "25 rows",
+        "rows_checked": 25,
+        "samples": [],
+        "table": "orders",
+        "violations": 0
+      },
+      {
+        "check": "columns",
+        "constraint": "id Int32, customer_id Int32, handled_by Int32, placed_at Datetime(time_unit='us', time_zone=None), tracking_id String",
+        "rows_checked": 5,
+        "samples": [],
+        "table": "orders",
+        "violations": 0
+      },
+      {
+        "check": "type_limits",
+        "constraint": "id SERIAL",
+        "rows_checked": 25,
+        "samples": [],
+        "table": "orders",
+        "violations": 0
+      },
+      {
+        "check": "type_limits",
+        "constraint": "customer_id INT",
+        "rows_checked": 25,
+        "samples": [],
+        "table": "orders",
+        "violations": 0
+      },
+      {
+        "check": "type_limits",
+        "constraint": "handled_by INT",
+        "rows_checked": 25,
+        "samples": [],
+        "table": "orders",
+        "violations": 0
+      },
+      {
+        "check": "type_limits",
+        "constraint": "placed_at TIMESTAMP",
+        "rows_checked": 25,
+        "samples": [],
+        "table": "orders",
+        "violations": 0
+      },
+      {
+        "check": "type_limits",
+        "constraint": "tracking_id UUID",
+        "rows_checked": 25,
+        "samples": [],
+        "table": "orders",
+        "violations": 0
+      },
+      {
+        "check": "not_null",
+        "constraint": "id NOT NULL",
+        "rows_checked": 25,
+        "samples": [],
+        "table": "orders",
+        "violations": 0
+      },
+      {
+        "check": "not_null",
+        "constraint": "customer_id NOT NULL",
+        "rows_checked": 25,
+        "samples": [],
+        "table": "orders",
+        "violations": 0
+      },
+      {
+        "check": "not_null",
+        "constraint": "placed_at NOT NULL",
+        "rows_checked": 25,
+        "samples": [],
+        "table": "orders",
+        "violations": 0
+      },
+      {
+        "check": "primary_key",
+        "constraint": "PRIMARY KEY (id)",
+        "rows_checked": 25,
+        "samples": [],
+        "table": "orders",
+        "violations": 0
+      },
+      {
+        "check": "unique",
+        "constraint": "UNIQUE (tracking_id)",
+        "rows_checked": 25,
+        "samples": [],
+        "table": "orders",
+        "violations": 0
+      },
+      {
+        "check": "foreign_key",
+        "constraint": "FOREIGN KEY (customer_id) -> customers (id) MATCH SIMPLE",
+        "rows_checked": 25,
+        "samples": [],
+        "table": "orders",
+        "violations": 0
+      },
+      {
+        "check": "foreign_key",
+        "constraint": "FOREIGN KEY (handled_by) -> employees (id) MATCH SIMPLE",
+        "rows_checked": 25,
+        "samples": [],
+        "table": "orders",
+        "violations": 0
+      },
+      {
+        "check": "row_count",
+        "constraint": "25 rows",
+        "rows_checked": 25,
+        "samples": [],
+        "table": "products",
+        "violations": 0
+      },
+      {
+        "check": "columns",
+        "constraint": "id Int32, sku String, name String, category_id Int32, price Decimal(precision=10, scale=2), in_stock Boolean",
+        "rows_checked": 6,
+        "samples": [],
+        "table": "products",
+        "violations": 0
+      },
+      {
+        "check": "type_limits",
+        "constraint": "id SERIAL",
+        "rows_checked": 25,
+        "samples": [],
+        "table": "products",
+        "violations": 0
+      },
+      {
+        "check": "type_limits",
+        "constraint": "sku CHAR(8)",
+        "rows_checked": 25,
+        "samples": [],
+        "table": "products",
+        "violations": 0
+      },
+      {
+        "check": "type_limits",
+        "constraint": "name VARCHAR(80)",
+        "rows_checked": 25,
+        "samples": [],
+        "table": "products",
+        "violations": 0
+      },
+      {
+        "check": "type_limits",
+        "constraint": "category_id INT",
+        "rows_checked": 25,
+        "samples": [],
+        "table": "products",
+        "violations": 0
+      },
+      {
+        "check": "type_limits",
+        "constraint": "price DECIMAL(10, 2)",
+        "rows_checked": 25,
+        "samples": [],
+        "table": "products",
+        "violations": 0
+      },
+      {
+        "check": "type_limits",
+        "constraint": "in_stock BOOLEAN",
+        "rows_checked": 25,
+        "samples": [],
+        "table": "products",
+        "violations": 0
+      },
+      {
+        "check": "not_null",
+        "constraint": "id NOT NULL",
+        "rows_checked": 25,
+        "samples": [],
+        "table": "products",
+        "violations": 0
+      },
+      {
+        "check": "not_null",
+        "constraint": "sku NOT NULL",
+        "rows_checked": 25,
+        "samples": [],
+        "table": "products",
+        "violations": 0
+      },
+      {
+        "check": "not_null",
+        "constraint": "name NOT NULL",
+        "rows_checked": 25,
+        "samples": [],
+        "table": "products",
+        "violations": 0
+      },
+      {
+        "check": "not_null",
+        "constraint": "category_id NOT NULL",
+        "rows_checked": 25,
+        "samples": [],
+        "table": "products",
+        "violations": 0
+      },
+      {
+        "check": "not_null",
+        "constraint": "price NOT NULL",
+        "rows_checked": 25,
+        "samples": [],
+        "table": "products",
+        "violations": 0
+      },
+      {
+        "check": "not_null",
+        "constraint": "in_stock NOT NULL",
+        "rows_checked": 25,
+        "samples": [],
+        "table": "products",
+        "violations": 0
+      },
+      {
+        "check": "primary_key",
+        "constraint": "PRIMARY KEY (id)",
+        "rows_checked": 25,
+        "samples": [],
+        "table": "products",
+        "violations": 0
+      },
+      {
+        "check": "unique",
+        "constraint": "UNIQUE (sku)",
+        "rows_checked": 25,
+        "samples": [],
+        "table": "products",
+        "violations": 0
+      },
+      {
+        "check": "foreign_key",
+        "constraint": "FOREIGN KEY (category_id) -> categories (id) MATCH SIMPLE",
+        "rows_checked": 25,
+        "samples": [],
+        "table": "products",
+        "violations": 0
+      },
+      {
+        "check": "backfill",
+        "constraint": "backfilled FOREIGN KEY (manager_id) -> employees (id) MATCH SIMPLE",
+        "rows_checked": 21,
+        "samples": [],
+        "table": "employees",
+        "violations": 0
+      },
+      {
+        "check": "backfill",
+        "constraint": "no pending backfill rows",
+        "rows_checked": 0,
+        "samples": [],
+        "table": "",
+        "violations": 0
+      }
+    ],
+    "passed": true,
+    "rules": [
+      {
+        "column": "city",
+        "coverage": "rows",
+        "null_count": 3,
+        "rows_evaluated": 25,
+        "rule_id": "served_cities",
+        "samples": [],
+        "table": "customers",
+        "violations": 0
+      },
+      {
+        "column": "email",
+        "coverage": "rows",
+        "null_count": 0,
+        "rows_evaluated": 25,
+        "rule_id": "customer_email",
+        "samples": [],
+        "table": "customers",
+        "violations": 0
+      },
+      {
+        "column": "quantity",
+        "coverage": "rows",
+        "null_count": 0,
+        "rows_evaluated": 25,
+        "rule_id": "sensible_quantity",
+        "samples": [],
+        "table": "order_items",
+        "violations": 0
+      },
+      {
+        "column": "unit_price",
+        "coverage": "rows",
+        "null_count": 0,
+        "rows_evaluated": 25,
+        "rule_id": "positive_unit_price",
+        "samples": [],
+        "table": "order_items",
+        "violations": 0
+      },
+      {
+        "column": "in_stock",
+        "coverage": "rows",
+        "null_count": 0,
+        "rows_evaluated": 25,
+        "rule_id": "mostly_in_stock",
+        "samples": [],
+        "table": "products",
+        "violations": 0
+      },
+      {
+        "column": "price",
+        "coverage": "rows",
+        "null_count": 0,
+        "rows_evaluated": 25,
+        "rule_id": "positive_price",
+        "samples": [],
+        "table": "products",
+        "violations": 0
+      }
+    ]
+  },
+  "serialized": {
+    "checks": [
+      {
+        "check": "row_count",
+        "constraint": "25 rows",
+        "rows_checked": 25,
+        "samples": [],
+        "table": "categories",
+        "violations": 0
+      },
+      {
+        "check": "columns",
+        "constraint": "id Int32, name String",
+        "rows_checked": 2,
+        "samples": [],
+        "table": "categories",
+        "violations": 0
+      },
+      {
+        "check": "type_limits",
+        "constraint": "id SERIAL",
+        "rows_checked": 25,
+        "samples": [],
+        "table": "categories",
+        "violations": 0
+      },
+      {
+        "check": "type_limits",
+        "constraint": "name VARCHAR(40)",
+        "rows_checked": 25,
+        "samples": [],
+        "table": "categories",
+        "violations": 0
+      },
+      {
+        "check": "not_null",
+        "constraint": "id NOT NULL",
+        "rows_checked": 25,
+        "samples": [],
+        "table": "categories",
+        "violations": 0
+      },
+      {
+        "check": "not_null",
+        "constraint": "name NOT NULL",
+        "rows_checked": 25,
+        "samples": [],
+        "table": "categories",
+        "violations": 0
+      },
+      {
+        "check": "primary_key",
+        "constraint": "PRIMARY KEY (id)",
+        "rows_checked": 25,
+        "samples": [],
+        "table": "categories",
+        "violations": 0
+      },
+      {
+        "check": "unique",
+        "constraint": "UNIQUE (name)",
+        "rows_checked": 25,
+        "samples": [],
+        "table": "categories",
+        "violations": 0
+      },
+      {
+        "check": "row_count",
+        "constraint": "25 rows",
+        "rows_checked": 25,
+        "samples": [],
+        "table": "customers",
+        "violations": 0
+      },
+      {
+        "check": "columns",
+        "constraint": "id Int32, email String, first_name String, last_name String, city String, signed_up Date",
+        "rows_checked": 6,
+        "samples": [],
+        "table": "customers",
+        "violations": 0
+      },
+      {
+        "check": "type_limits",
+        "constraint": "id SERIAL",
+        "rows_checked": 25,
+        "samples": [],
+        "table": "customers",
+        "violations": 0
+      },
+      {
+        "check": "type_limits",
+        "constraint": "email VARCHAR(100)",
+        "rows_checked": 25,
+        "samples": [],
+        "table": "customers",
+        "violations": 0
+      },
+      {
+        "check": "type_limits",
+        "constraint": "first_name VARCHAR(50)",
+        "rows_checked": 25,
+        "samples": [],
+        "table": "customers",
+        "violations": 0
+      },
+      {
+        "check": "type_limits",
+        "constraint": "last_name VARCHAR(50)",
+        "rows_checked": 25,
+        "samples": [],
+        "table": "customers",
+        "violations": 0
+      },
+      {
+        "check": "type_limits",
+        "constraint": "city VARCHAR(50)",
+        "rows_checked": 25,
+        "samples": [],
+        "table": "customers",
+        "violations": 0
+      },
+      {
+        "check": "type_limits",
+        "constraint": "signed_up DATE",
+        "rows_checked": 25,
+        "samples": [],
+        "table": "customers",
+        "violations": 0
+      },
+      {
+        "check": "not_null",
+        "constraint": "id NOT NULL",
+        "rows_checked": 25,
+        "samples": [],
+        "table": "customers",
+        "violations": 0
+      },
+      {
+        "check": "not_null",
+        "constraint": "email NOT NULL",
+        "rows_checked": 25,
+        "samples": [],
+        "table": "customers",
+        "violations": 0
+      },
+      {
+        "check": "not_null",
+        "constraint": "first_name NOT NULL",
+        "rows_checked": 25,
+        "samples": [],
+        "table": "customers",
+        "violations": 0
+      },
+      {
+        "check": "not_null",
+        "constraint": "last_name NOT NULL",
+        "rows_checked": 25,
+        "samples": [],
+        "table": "customers",
+        "violations": 0
+      },
+      {
+        "check": "not_null",
+        "constraint": "signed_up NOT NULL",
+        "rows_checked": 25,
+        "samples": [],
+        "table": "customers",
+        "violations": 0
+      },
+      {
+        "check": "primary_key",
+        "constraint": "PRIMARY KEY (id)",
+        "rows_checked": 25,
+        "samples": [],
+        "table": "customers",
+        "violations": 0
+      },
+      {
+        "check": "unique",
+        "constraint": "UNIQUE (email)",
+        "rows_checked": 25,
+        "samples": [],
+        "table": "customers",
+        "violations": 0
+      },
+      {
+        "check": "row_count",
+        "constraint": "25 rows",
+        "rows_checked": 25,
+        "samples": [],
+        "table": "employees",
+        "violations": 0
+      },
+      {
+        "check": "columns",
+        "constraint": "id Int32, first_name String, last_name String, manager_id Int32",
+        "rows_checked": 4,
+        "samples": [],
+        "table": "employees",
+        "violations": 0
+      },
+      {
+        "check": "type_limits",
+        "constraint": "id SERIAL",
+        "rows_checked": 25,
+        "samples": [],
+        "table": "employees",
+        "violations": 0
+      },
+      {
+        "check": "type_limits",
+        "constraint": "first_name VARCHAR(50)",
+        "rows_checked": 25,
+        "samples": [],
+        "table": "employees",
+        "violations": 0
+      },
+      {
+        "check": "type_limits",
+        "constraint": "last_name VARCHAR(50)",
+        "rows_checked": 25,
+        "samples": [],
+        "table": "employees",
+        "violations": 0
+      },
+      {
+        "check": "type_limits",
+        "constraint": "manager_id INT",
+        "rows_checked": 25,
+        "samples": [],
+        "table": "employees",
+        "violations": 0
+      },
+      {
+        "check": "not_null",
+        "constraint": "id NOT NULL",
+        "rows_checked": 25,
+        "samples": [],
+        "table": "employees",
+        "violations": 0
+      },
+      {
+        "check": "not_null",
+        "constraint": "first_name NOT NULL",
+        "rows_checked": 25,
+        "samples": [],
+        "table": "employees",
+        "violations": 0
+      },
+      {
+        "check": "not_null",
+        "constraint": "last_name NOT NULL",
+        "rows_checked": 25,
+        "samples": [],
+        "table": "employees",
+        "violations": 0
+      },
+      {
+        "check": "primary_key",
+        "constraint": "PRIMARY KEY (id)",
+        "rows_checked": 25,
+        "samples": [],
+        "table": "employees",
+        "violations": 0
+      },
+      {
+        "check": "foreign_key",
+        "constraint": "FOREIGN KEY (manager_id) -> employees (id) MATCH SIMPLE",
+        "rows_checked": 25,
+        "samples": [],
+        "table": "employees",
+        "violations": 0
+      },
+      {
+        "check": "row_count",
+        "constraint": "25 rows",
+        "rows_checked": 25,
+        "samples": [],
+        "table": "order_items",
+        "violations": 0
+      },
+      {
+        "check": "columns",
+        "constraint": "order_id Int32, product_id Int32, quantity Int16, unit_price Decimal(precision=10, scale=2)",
+        "rows_checked": 4,
+        "samples": [],
+        "table": "order_items",
+        "violations": 0
+      },
+      {
+        "check": "type_limits",
+        "constraint": "order_id INT",
+        "rows_checked": 25,
+        "samples": [],
+        "table": "order_items",
+        "violations": 0
+      },
+      {
+        "check": "type_limits",
+        "constraint": "product_id INT",
+        "rows_checked": 25,
+        "samples": [],
+        "table": "order_items",
+        "violations": 0
+      },
+      {
+        "check": "type_limits",
+        "constraint": "quantity SMALLINT",
+        "rows_checked": 25,
+        "samples": [],
+        "table": "order_items",
+        "violations": 0
+      },
+      {
+        "check": "type_limits",
+        "constraint": "unit_price DECIMAL(10, 2)",
+        "rows_checked": 25,
+        "samples": [],
+        "table": "order_items",
+        "violations": 0
+      },
+      {
+        "check": "not_null",
+        "constraint": "order_id NOT NULL",
+        "rows_checked": 25,
+        "samples": [],
+        "table": "order_items",
+        "violations": 0
+      },
+      {
+        "check": "not_null",
+        "constraint": "product_id NOT NULL",
+        "rows_checked": 25,
+        "samples": [],
+        "table": "order_items",
+        "violations": 0
+      },
+      {
+        "check": "not_null",
+        "constraint": "quantity NOT NULL",
+        "rows_checked": 25,
+        "samples": [],
+        "table": "order_items",
+        "violations": 0
+      },
+      {
+        "check": "not_null",
+        "constraint": "unit_price NOT NULL",
+        "rows_checked": 25,
+        "samples": [],
+        "table": "order_items",
+        "violations": 0
+      },
+      {
+        "check": "primary_key",
+        "constraint": "PRIMARY KEY (order_id, product_id)",
+        "rows_checked": 25,
+        "samples": [],
+        "table": "order_items",
+        "violations": 0
+      },
+      {
+        "check": "foreign_key",
+        "constraint": "FOREIGN KEY (order_id) -> orders (id) MATCH SIMPLE",
+        "rows_checked": 25,
+        "samples": [],
+        "table": "order_items",
+        "violations": 0
+      },
+      {
+        "check": "foreign_key",
+        "constraint": "FOREIGN KEY (product_id) -> products (id) MATCH SIMPLE",
+        "rows_checked": 25,
+        "samples": [],
+        "table": "order_items",
+        "violations": 0
+      },
+      {
+        "check": "row_count",
+        "constraint": "25 rows",
+        "rows_checked": 25,
+        "samples": [],
+        "table": "orders",
+        "violations": 0
+      },
+      {
+        "check": "columns",
+        "constraint": "id Int32, customer_id Int32, handled_by Int32, placed_at Datetime(time_unit='us', time_zone=None), tracking_id String",
+        "rows_checked": 5,
+        "samples": [],
+        "table": "orders",
+        "violations": 0
+      },
+      {
+        "check": "type_limits",
+        "constraint": "id SERIAL",
+        "rows_checked": 25,
+        "samples": [],
+        "table": "orders",
+        "violations": 0
+      },
+      {
+        "check": "type_limits",
+        "constraint": "customer_id INT",
+        "rows_checked": 25,
+        "samples": [],
+        "table": "orders",
+        "violations": 0
+      },
+      {
+        "check": "type_limits",
+        "constraint": "handled_by INT",
+        "rows_checked": 25,
+        "samples": [],
+        "table": "orders",
+        "violations": 0
+      },
+      {
+        "check": "type_limits",
+        "constraint": "placed_at TIMESTAMP",
+        "rows_checked": 25,
+        "samples": [],
+        "table": "orders",
+        "violations": 0
+      },
+      {
+        "check": "type_limits",
+        "constraint": "tracking_id UUID",
+        "rows_checked": 25,
+        "samples": [],
+        "table": "orders",
+        "violations": 0
+      },
+      {
+        "check": "not_null",
+        "constraint": "id NOT NULL",
+        "rows_checked": 25,
+        "samples": [],
+        "table": "orders",
+        "violations": 0
+      },
+      {
+        "check": "not_null",
+        "constraint": "customer_id NOT NULL",
+        "rows_checked": 25,
+        "samples": [],
+        "table": "orders",
+        "violations": 0
+      },
+      {
+        "check": "not_null",
+        "constraint": "placed_at NOT NULL",
+        "rows_checked": 25,
+        "samples": [],
+        "table": "orders",
+        "violations": 0
+      },
+      {
+        "check": "primary_key",
+        "constraint": "PRIMARY KEY (id)",
+        "rows_checked": 25,
+        "samples": [],
+        "table": "orders",
+        "violations": 0
+      },
+      {
+        "check": "unique",
+        "constraint": "UNIQUE (tracking_id)",
+        "rows_checked": 25,
+        "samples": [],
+        "table": "orders",
+        "violations": 0
+      },
+      {
+        "check": "foreign_key",
+        "constraint": "FOREIGN KEY (customer_id) -> customers (id) MATCH SIMPLE",
+        "rows_checked": 25,
+        "samples": [],
+        "table": "orders",
+        "violations": 0
+      },
+      {
+        "check": "foreign_key",
+        "constraint": "FOREIGN KEY (handled_by) -> employees (id) MATCH SIMPLE",
+        "rows_checked": 25,
+        "samples": [],
+        "table": "orders",
+        "violations": 0
+      },
+      {
+        "check": "row_count",
+        "constraint": "25 rows",
+        "rows_checked": 25,
+        "samples": [],
+        "table": "products",
+        "violations": 0
+      },
+      {
+        "check": "columns",
+        "constraint": "id Int32, sku String, name String, category_id Int32, price Decimal(precision=10, scale=2), in_stock Boolean",
+        "rows_checked": 6,
+        "samples": [],
+        "table": "products",
+        "violations": 0
+      },
+      {
+        "check": "type_limits",
+        "constraint": "id SERIAL",
+        "rows_checked": 25,
+        "samples": [],
+        "table": "products",
+        "violations": 0
+      },
+      {
+        "check": "type_limits",
+        "constraint": "sku CHAR(8)",
+        "rows_checked": 25,
+        "samples": [],
+        "table": "products",
+        "violations": 0
+      },
+      {
+        "check": "type_limits",
+        "constraint": "name VARCHAR(80)",
+        "rows_checked": 25,
+        "samples": [],
+        "table": "products",
+        "violations": 0
+      },
+      {
+        "check": "type_limits",
+        "constraint": "category_id INT",
+        "rows_checked": 25,
+        "samples": [],
+        "table": "products",
+        "violations": 0
+      },
+      {
+        "check": "type_limits",
+        "constraint": "price DECIMAL(10, 2)",
+        "rows_checked": 25,
+        "samples": [],
+        "table": "products",
+        "violations": 0
+      },
+      {
+        "check": "type_limits",
+        "constraint": "in_stock BOOLEAN",
+        "rows_checked": 25,
+        "samples": [],
+        "table": "products",
+        "violations": 0
+      },
+      {
+        "check": "not_null",
+        "constraint": "id NOT NULL",
+        "rows_checked": 25,
+        "samples": [],
+        "table": "products",
+        "violations": 0
+      },
+      {
+        "check": "not_null",
+        "constraint": "sku NOT NULL",
+        "rows_checked": 25,
+        "samples": [],
+        "table": "products",
+        "violations": 0
+      },
+      {
+        "check": "not_null",
+        "constraint": "name NOT NULL",
+        "rows_checked": 25,
+        "samples": [],
+        "table": "products",
+        "violations": 0
+      },
+      {
+        "check": "not_null",
+        "constraint": "category_id NOT NULL",
+        "rows_checked": 25,
+        "samples": [],
+        "table": "products",
+        "violations": 0
+      },
+      {
+        "check": "not_null",
+        "constraint": "price NOT NULL",
+        "rows_checked": 25,
+        "samples": [],
+        "table": "products",
+        "violations": 0
+      },
+      {
+        "check": "not_null",
+        "constraint": "in_stock NOT NULL",
+        "rows_checked": 25,
+        "samples": [],
+        "table": "products",
+        "violations": 0
+      },
+      {
+        "check": "primary_key",
+        "constraint": "PRIMARY KEY (id)",
+        "rows_checked": 25,
+        "samples": [],
+        "table": "products",
+        "violations": 0
+      },
+      {
+        "check": "unique",
+        "constraint": "UNIQUE (sku)",
+        "rows_checked": 25,
+        "samples": [],
+        "table": "products",
+        "violations": 0
+      },
+      {
+        "check": "foreign_key",
+        "constraint": "FOREIGN KEY (category_id) -> categories (id) MATCH SIMPLE",
+        "rows_checked": 25,
+        "samples": [],
+        "table": "products",
+        "violations": 0
+      },
+      {
+        "check": "backfill",
+        "constraint": "backfilled FOREIGN KEY (manager_id) -> employees (id) MATCH SIMPLE",
+        "rows_checked": 21,
+        "samples": [],
+        "table": "employees",
+        "violations": 0
+      },
+      {
+        "check": "backfill",
+        "constraint": "no pending backfill rows",
+        "rows_checked": 0,
+        "samples": [],
+        "table": "",
+        "violations": 0
+      }
+    ],
+    "passed": true,
+    "rules": [
+      {
+        "column": "city",
+        "coverage": "rows",
+        "null_count": 3,
+        "rows_evaluated": 25,
+        "rule_id": "served_cities",
+        "samples": [],
+        "table": "customers",
+        "violations": 0
+      },
+      {
+        "column": "email",
+        "coverage": "rows",
+        "null_count": 0,
+        "rows_evaluated": 25,
+        "rule_id": "customer_email",
+        "samples": [],
+        "table": "customers",
+        "violations": 0
+      },
+      {
+        "column": "quantity",
+        "coverage": "rows",
+        "null_count": 0,
+        "rows_evaluated": 25,
+        "rule_id": "sensible_quantity",
+        "samples": [],
+        "table": "order_items",
+        "violations": 0
+      },
+      {
+        "column": "unit_price",
+        "coverage": "rows",
+        "null_count": 0,
+        "rows_evaluated": 25,
+        "rule_id": "positive_unit_price",
+        "samples": [],
+        "table": "order_items",
+        "violations": 0
+      },
+      {
+        "column": "in_stock",
+        "coverage": "rows",
+        "null_count": 0,
+        "rows_evaluated": 25,
+        "rule_id": "mostly_in_stock",
+        "samples": [],
+        "table": "products",
+        "violations": 0
+      },
+      {
+        "column": "price",
+        "coverage": "rows",
+        "null_count": 0,
+        "rows_evaluated": 25,
+        "rule_id": "positive_price",
+        "samples": [],
+        "table": "products",
+        "violations": 0
+      }
+    ]
+  }
+}

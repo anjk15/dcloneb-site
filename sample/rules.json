@@ -1,0 +1,69 @@
+{
+  "rules": [
+    {
+      "column": "city",
+      "id": "served_cities",
+      "null_policy": "allow",
+      "table": "customers",
+      "type": "allowed_values",
+      "values": [
+        "Austin",
+        "Chicago",
+        "Denver",
+        "Seattle"
+      ]
+    },
+    {
+      "column": "email",
+      "format": "email",
+      "id": "customer_email",
+      "null_policy": "forbid",
+      "table": "customers",
+      "type": "format"
+    },
+    {
+      "column": "quantity",
+      "id": "sensible_quantity",
+      "max": 10,
+      "max_inclusive": true,
+      "min": 1,
+      "min_inclusive": true,
+      "null_policy": "forbid",
+      "table": "order_items",
+      "type": "range"
+    },
+    {
+      "column": "unit_price",
+      "id": "positive_unit_price",
+      "max": "500",
+      "max_inclusive": true,
+      "min": "0",
+      "min_inclusive": false,
+      "null_policy": "forbid",
+      "table": "order_items",
+      "type": "range"
+    },
+    {
+      "column": "in_stock",
+      "id": "mostly_in_stock",
+      "null_policy": "forbid",
+      "table": "products",
+      "type": "allowed_values",
+      "values": [
+        true
+      ]
+    },
+    {
+      "column": "price",
+      "id": "positive_price",
+      "max": "500",
+      "max_inclusive": true,
+      "min": "0",
+      "min_inclusive": false,
+      "null_policy": "forbid",
+      "table": "products",
+      "type": "range"
+    }
+  ],
+  "rules_version": 1
+}

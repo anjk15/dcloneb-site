@@ -1,0 +1,72 @@
+:root {
+  --bg: #fafaf8; --fg: #1b1b19; --muted: #61615b; --line: #e4e3dd; --card: #ffffff;
+  --accent: #1f6f43; --accent-soft: #e6f2eb; --accent-fg: #ffffff; --code-bg: #f2f1ec;
+}
+@media (prefers-color-scheme: dark) {
+  :root { --bg: #121211; --fg: #ecebe6; --muted: #a6a59e; --line: #2c2c29; --card: #1a1a18;
+          --accent: #55b383; --accent-soft: #1b2b22; --accent-fg: #0c1811; --code-bg: #1e1e1c; }
+}
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body { margin: 0; background: var(--bg); color: var(--fg);
+       font: 17px/1.6 system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; }
+.wrap { max-width: 60rem; margin: 0 auto; padding: 0 16px; }
+a { color: var(--accent); }
+code, pre { font-family: ui-monospace, "SF Mono", Menlo, Consolas, monospace; }
+code { font-size: .9em; background: var(--code-bg); padding: .1em .35em; border-radius: 5px; }
+
+.hero { padding: 5rem 0 3rem; text-align: center; }
+.badge { display: inline-block; font-size: .85rem; font-weight: 600; color: var(--accent); background: var(--accent-soft);
+         padding: .2rem .7rem; border-radius: 999px; margin: 0 0 1.25rem; }
+h1 { font-size: clamp(2rem, 5vw, 3.1rem); line-height: 1.12; letter-spacing: -.02em; margin: 0 0 1.1rem; }
+.lead { font-size: 1.2rem; color: var(--muted); max-width: 38rem; margin: 0 auto 1.75rem; }
+.actions .button { margin: .3rem; }
+.button { display: inline-block; padding: .7rem 1.25rem; border-radius: 10px; border: 1px solid var(--line);
+          background: var(--card); color: var(--fg); text-decoration: none; font-weight: 600; }
+.button.primary { background: var(--accent); border-color: var(--accent); color: var(--accent-fg); }
+.button:hover { filter: brightness(.96); }
+
+.flow { display: grid; gap: 1rem; grid-template-columns: repeat(3, 1fr); margin: 1rem 0 1rem; }
+@media (max-width: 640px) { .flow { grid-template-columns: 1fr; } }
+.step { background: var(--card); border: 1px solid var(--line); border-radius: 14px; padding: 1.4rem 1.4rem 1.1rem; }
+.step h3 { margin: .6rem 0 .3rem; font-size: 1.15rem; }
+.step p { margin: 0; color: var(--muted); }
+.num { display: inline-grid; place-items: center; width: 2rem; height: 2rem; border-radius: 50%;
+       background: var(--accent); color: var(--accent-fg); font-weight: 700; }
+
+section { margin: 3.5rem 0; }
+h2 { font-size: 1.7rem; letter-spacing: -.01em; margin: 0 0 .4rem; }
+h4 { margin: 1.25rem 0 .4rem; }
+.muted { color: var(--muted); margin-top: 0; }
+
+.commands { list-style: none; counter-reset: c; padding: 0; margin: 1.25rem 0; }
+.commands li { counter-increment: c; margin: 0 0 1rem; }
+.label { display: block; font-weight: 600; margin-bottom: .35rem; }
+.label::before { content: counter(c) ". "; color: var(--accent); }
+.commands.next { counter-reset: c 1; margin-bottom: .75rem; }  /* continues after "1. Install" */
+
+.apps { display: grid; gap: 1rem; grid-template-columns: repeat(2, minmax(0, 1fr)); margin: .5rem 0 1.25rem; }
+@media (max-width: 720px) { .apps { grid-template-columns: 1fr; } }
+.app { background: var(--card); border: 1px solid var(--line); border-radius: 14px; padding: 1.3rem 1.3rem .4rem; }
+.app h3 { margin: 0 0 .25rem; font-size: 1.2rem; }
+.app p { margin: 0 0 .9rem; }
+.note { font-size: .9rem; color: var(--muted); border-left: 3px solid var(--line); padding-left: .7rem; }
+pre.code { margin: 0; background: var(--code-bg); border: 1px solid var(--line); border-radius: 10px;
+           padding: .85rem 1rem; overflow-x: auto; font-size: .88rem; white-space: pre-wrap; overflow-wrap: anywhere; }
+
+.table-scroll { overflow-x: auto; border: 1px solid var(--line); border-radius: 12px; background: var(--card); margin: .5rem 0 1.25rem; }
+h4 + .table-scroll { margin-top: .25rem; }
+table { border-collapse: collapse; width: 100%; font-size: .9rem; }
+th, td { text-align: left; padding: .5rem .8rem; border-bottom: 1px solid var(--line); white-space: nowrap; }
+td { white-space: normal; }
+tbody tr:last-child td { border-bottom: 0; }
+th { background: var(--code-bg); font-weight: 600; }
+.downloads .button { margin: .25rem .5rem .25rem 0; }
+
+details { background: var(--card); border: 1px solid var(--line); border-radius: 12px; padding: .9rem 1.2rem; margin: .75rem 0; }
+summary { cursor: pointer; font-weight: 600; }
+details[open] summary { margin-bottom: .5rem; }
+details ul { padding-left: 1.2rem; }
+.chips code { display: inline-block; margin: .15rem .25rem .15rem 0; }
+
+footer { color: var(--muted); border-top: 1px solid var(--line); padding: 1.5rem 16px 2.5rem; font-size: .9rem; text-align: center; }

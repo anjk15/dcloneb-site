@@ -1,0 +1,804 @@
+{
+  "backfill": [
+    {
+      "cycle": [
+        "employees"
+      ],
+      "fill": [
+        {
+          "column": "manager_id",
+          "parent_column": "id"
+        }
+      ],
+      "fill_after": "all tables are initially loaded",
+      "foreign_key": {
+        "columns": [
+          "manager_id"
+        ],
+        "deferrable": false,
+        "initially_deferred": false,
+        "match": "simple",
+        "name": null,
+        "references": {
+          "columns": [
+            "id"
+          ],
+          "table": "employees"
+        }
+      },
+      "null_columns": [
+        "manager_id"
+      ],
+      "requirement": "set null_columns so the full FK tuple equals an existing parent key; keep retained_columns unchanged",
+      "retained_columns": [],
+      "table": "employees"
+    }
+  ],
+  "diagnostics": [],
+  "dialect": "postgres",
+  "execution_order": [
+    "categories",
+    "customers",
+    "employees",
+    "orders",
+    "products",
+    "order_items"
+  ],
+  "format_version": 1,
+  "many_to_many": [
+    {
+      "junction": "order_items",
+      "tables": [
+        "orders",
+        "products"
+      ],
+      "via": [
+        {
+          "columns": [
+            "order_id"
+          ],
+          "references": "orders"
+        },
+        {
+          "columns": [
+            "product_id"
+          ],
+          "references": "products"
+        }
+      ]
+    }
+  ],
+  "relationships": [
+    {
+      "foreign_key": null,
+      "from": {
+        "columns": [
+          "manager_id"
+        ],
+        "table": "employees"
+      },
+      "kind": "many_to_one",
+      "optional": true,
+      "to": {
+        "columns": [
+          "id"
+        ],
+        "table": "employees"
+      }
+    },
+    {
+      "foreign_key": null,
+      "from": {
+        "columns": [
+          "order_id"
+        ],
+        "table": "order_items"
+      },
+      "kind": "many_to_one",
+      "optional": false,
+      "to": {
+        "columns": [
+          "id"
+        ],
+        "table": "orders"
+      }
+    },
+    {
+      "foreign_key": null,
+      "from": {
+        "columns": [
+          "product_id"
+        ],
+        "table": "order_items"
+      },
+      "kind": "many_to_one",
+      "optional": false,
+      "to": {
+        "columns": [
+          "id"
+        ],
+        "table": "products"
+      }
+    },
+    {
+      "foreign_key": null,
+      "from": {
+        "columns": [
+          "customer_id"
+        ],
+        "table": "orders"
+      },
+      "kind": "many_to_one",
+      "optional": false,
+      "to": {
+        "columns": [
+          "id"
+        ],
+        "table": "customers"
+      }
+    },
+    {
+      "foreign_key": null,
+      "from": {
+        "columns": [
+          "handled_by"
+        ],
+        "table": "orders"
+      },
+      "kind": "many_to_one",
+      "optional": true,
+      "to": {
+        "columns": [
+          "id"
+        ],
+        "table": "employees"
+      }
+    },
+    {
+      "foreign_key": null,
+      "from": {
+        "columns": [
+          "category_id"
+        ],
+        "table": "products"
+      },
+      "kind": "many_to_one",
+      "optional": false,
+      "to": {
+        "columns": [
+          "id"
+        ],
+        "table": "categories"
+      }
+    }
+  ],
+  "status": "ok",
+  "tables": {
+    "categories": {
+      "checks": [],
+      "columns": [
+        {
+          "collation": null,
+          "generated": false,
+          "has_default": false,
+          "identity": "serial",
+          "name": "id",
+          "nullable": false,
+          "type": "SERIAL",
+          "type_info": {
+            "name": "SERIAL",
+            "params": []
+          }
+        },
+        {
+          "collation": null,
+          "generated": false,
+          "has_default": false,
+          "identity": null,
+          "name": "name",
+          "nullable": false,
+          "type": "VARCHAR(40)",
+          "type_info": {
+            "name": "VARCHAR",
+            "params": [
+              40
+            ]
+          }
+        }
+      ],
+      "foreign_keys": [],
+      "primary_key": [
+        "id"
+      ],
+      "unique_columns": [
+        "id",
+        "name"
+      ],
+      "unique_combinations": [],
+      "unique_keys": [
+        {
+          "columns": [
+            "name"
+          ],
+          "nulls_distinct": true
+        }
+      ]
+    },
+    "customers": {
+      "checks": [],
+      "columns": [
+        {
+          "collation": null,
+          "generated": false,
+          "has_default": false,
+          "identity": "serial",
+          "name": "id",
+          "nullable": false,
+          "type": "SERIAL",
+          "type_info": {
+            "name": "SERIAL",
+            "params": []
+          }
+        },
+        {
+          "collation": null,
+          "generated": false,
+          "has_default": false,
+          "identity": null,
+          "name": "email",
+          "nullable": false,
+          "type": "VARCHAR(100)",
+          "type_info": {
+            "name": "VARCHAR",
+            "params": [
+              100
+            ]
+          }
+        },
+        {
+          "collation": null,
+          "generated": false,
+          "has_default": false,
+          "identity": null,
+          "name": "first_name",
+          "nullable": false,
+          "type": "VARCHAR(50)",
+          "type_info": {
+            "name": "VARCHAR",
+            "params": [
+              50
+            ]
+          }
+        },
+        {
+          "collation": null,
+          "generated": false,
+          "has_default": false,
+          "identity": null,
+          "name": "last_name",
+          "nullable": false,
+          "type": "VARCHAR(50)",
+          "type_info": {
+            "name": "VARCHAR",
+            "params": [
+              50
+            ]
+          }
+        },
+        {
+          "collation": null,
+          "generated": false,
+          "has_default": false,
+          "identity": null,
+          "name": "city",
+          "nullable": true,
+          "type": "VARCHAR(50)",
+          "type_info": {
+            "name": "VARCHAR",
+            "params": [
+              50
+            ]
+          }
+        },
+        {
+          "collation": null,
+          "generated": false,
+          "has_default": false,
+          "identity": null,
+          "name": "signed_up",
+          "nullable": false,
+          "type": "DATE",
+          "type_info": {
+            "name": "DATE",
+            "params": []
+          }
+        }
+      ],
+      "foreign_keys": [],
+      "primary_key": [
+        "id"
+      ],
+      "unique_columns": [
+        "email",
+        "id"
+      ],
+      "unique_combinations": [],
+      "unique_keys": [
+        {
+          "columns": [
+            "email"
+          ],
+          "nulls_distinct": true
+        }
+      ]
+    },
+    "employees": {
+      "checks": [],
+      "columns": [
+        {
+          "collation": null,
+          "generated": false,
+          "has_default": false,
+          "identity": "serial",
+          "name": "id",
+          "nullable": false,
+          "type": "SERIAL",
+          "type_info": {
+            "name": "SERIAL",
+            "params": []
+          }
+        },
+        {
+          "collation": null,
+          "generated": false,
+          "has_default": false,
+          "identity": null,
+          "name": "first_name",
+          "nullable": false,
+          "type": "VARCHAR(50)",
+          "type_info": {
+            "name": "VARCHAR",
+            "params": [
+              50
+            ]
+          }
+        },
+        {
+          "collation": null,
+          "generated": false,
+          "has_default": false,
+          "identity": null,
+          "name": "last_name",
+          "nullable": false,
+          "type": "VARCHAR(50)",
+          "type_info": {
+            "name": "VARCHAR",
+            "params": [
+              50
+            ]
+          }
+        },
+        {
+          "collation": null,
+          "generated": false,
+          "has_default": false,
+          "identity": null,
+          "name": "manager_id",
+          "nullable": true,
+          "type": "INT",
+          "type_info": {
+            "name": "INT",
+            "params": []
+          }
+        }
+      ],
+      "foreign_keys": [
+        {
+          "backfill_eligible": true,
+          "columns": [
+            "manager_id"
+          ],
+          "deferrable": false,
+          "ineligible_reasons": {},
+          "initially_deferred": false,
+          "match": "simple",
+          "name": null,
+          "optional": true,
+          "references": {
+            "columns": [
+              "id"
+            ],
+            "table": "employees"
+          }
+        }
+      ],
+      "primary_key": [
+        "id"
+      ],
+      "unique_columns": [
+        "id"
+      ],
+      "unique_combinations": [],
+      "unique_keys": []
+    },
+    "order_items": {
+      "checks": [],
+      "columns": [
+        {
+          "collation": null,
+          "generated": false,
+          "has_default": false,
+          "identity": null,
+          "name": "order_id",
+          "nullable": false,
+          "type": "INT",
+          "type_info": {
+            "name": "INT",
+            "params": []
+          }
+        },
+        {
+          "collation": null,
+          "generated": false,
+          "has_default": false,
+          "identity": null,
+          "name": "product_id",
+          "nullable": false,
+          "type": "INT",
+          "type_info": {
+            "name": "INT",
+            "params": []
+          }
+        },
+        {
+          "collation": null,
+          "generated": false,
+          "has_default": false,
+          "identity": null,
+          "name": "quantity",
+          "nullable": false,
+          "type": "SMALLINT",
+          "type_info": {
+            "name": "SMALLINT",
+            "params": []
+          }
+        },
+        {
+          "collation": null,
+          "generated": false,
+          "has_default": false,
+          "identity": null,
+          "name": "unit_price",
+          "nullable": false,
+          "type": "DECIMAL(10, 2)",
+          "type_info": {
+            "name": "DECIMAL",
+            "params": [
+              10,
+              2
+            ]
+          }
+        }
+      ],
+      "foreign_keys": [
+        {
+          "backfill_eligible": false,
+          "columns": [
+            "order_id"
+          ],
+          "deferrable": false,
+          "ineligible_reasons": {
+            "order_id": [
+              "NOT NULL",
+              "primary key"
+            ]
+          },
+          "initially_deferred": false,
+          "match": "simple",
+          "name": null,
+          "optional": false,
+          "references": {
+            "columns": [
+              "id"
+            ],
+            "table": "orders"
+          }
+        },
+        {
+          "backfill_eligible": false,
+          "columns": [
+            "product_id"
+          ],
+          "deferrable": false,
+          "ineligible_reasons": {
+            "product_id": [
+              "NOT NULL",
+              "primary key"
+            ]
+          },
+          "initially_deferred": false,
+          "match": "simple",
+          "name": null,
+          "optional": false,
+          "references": {
+            "columns": [
+              "id"
+            ],
+            "table": "products"
+          }
+        }
+      ],
+      "primary_key": [
+        "order_id",
+        "product_id"
+      ],
+      "unique_columns": [],
+      "unique_combinations": [
+        [
+          "order_id",
+          "product_id"
+        ]
+      ],
+      "unique_keys": []
+    },
+    "orders": {
+      "checks": [],
+      "columns": [
+        {
+          "collation": null,
+          "generated": false,
+          "has_default": false,
+          "identity": "serial",
+          "name": "id",
+          "nullable": false,
+          "type": "SERIAL",
+          "type_info": {
+            "name": "SERIAL",
+            "params": []
+          }
+        },
+        {
+          "collation": null,
+          "generated": false,
+          "has_default": false,
+          "identity": null,
+          "name": "customer_id",
+          "nullable": false,
+          "type": "INT",
+          "type_info": {
+            "name": "INT",
+            "params": []
+          }
+        },
+        {
+          "collation": null,
+          "generated": false,
+          "has_default": false,
+          "identity": null,
+          "name": "handled_by",
+          "nullable": true,
+          "type": "INT",
+          "type_info": {
+            "name": "INT",
+            "params": []
+          }
+        },
+        {
+          "collation": null,
+          "generated": false,
+          "has_default": false,
+          "identity": null,
+          "name": "placed_at",
+          "nullable": false,
+          "type": "TIMESTAMP",
+          "type_info": {
+            "name": "TIMESTAMP",
+            "params": []
+          }
+        },
+        {
+          "collation": null,
+          "generated": false,
+          "has_default": false,
+          "identity": null,
+          "name": "tracking_id",
+          "nullable": true,
+          "type": "UUID",
+          "type_info": {
+            "name": "UUID",
+            "params": []
+          }
+        }
+      ],
+      "foreign_keys": [
+        {
+          "backfill_eligible": false,
+          "columns": [
+            "customer_id"
+          ],
+          "deferrable": false,
+          "ineligible_reasons": {
+            "customer_id": [
+              "NOT NULL"
+            ]
+          },
+          "initially_deferred": false,
+          "match": "simple",
+          "name": null,
+          "optional": false,
+          "references": {
+            "columns": [
+              "id"
+            ],
+            "table": "customers"
+          }
+        },
+        {
+          "backfill_eligible": true,
+          "columns": [
+            "handled_by"
+          ],
+          "deferrable": false,
+          "ineligible_reasons": {},
+          "initially_deferred": false,
+          "match": "simple",
+          "name": null,
+          "optional": true,
+          "references": {
+            "columns": [
+              "id"
+            ],
+            "table": "employees"
+          }
+        }
+      ],
+      "primary_key": [
+        "id"
+      ],
+      "unique_columns": [
+        "id",
+        "tracking_id"
+      ],
+      "unique_combinations": [],
+      "unique_keys": [
+        {
+          "columns": [
+            "tracking_id"
+          ],
+          "nulls_distinct": true
+        }
+      ]
+    },
+    "products": {
+      "checks": [],
+      "columns": [
+        {
+          "collation": null,
+          "generated": false,
+          "has_default": false,
+          "identity": "serial",
+          "name": "id",
+          "nullable": false,
+          "type": "SERIAL",
+          "type_info": {
+            "name": "SERIAL",
+            "params": []
+          }
+        },
+        {
+          "collation": null,
+          "generated": false,
+          "has_default": false,
+          "identity": null,
+          "name": "sku",
+          "nullable": false,
+          "type": "CHAR(8)",
+          "type_info": {
+            "name": "CHAR",
+            "params": [
+              8
+            ]
+          }
+        },
+        {
+          "collation": null,
+          "generated": false,
+          "has_default": false,
+          "identity": null,
+          "name": "name",
+          "nullable": false,
+          "type": "VARCHAR(80)",
+          "type_info": {
+            "name": "VARCHAR",
+            "params": [
+              80
+            ]
+          }
+        },
+        {
+          "collation": null,
+          "generated": false,
+          "has_default": false,
+          "identity": null,
+          "name": "category_id",
+          "nullable": false,
+          "type": "INT",
+          "type_info": {
+            "name": "INT",
+            "params": []
+          }
+        },
+        {
+          "collation": null,
+          "generated": false,
+          "has_default": false,
+          "identity": null,
+          "name": "price",
+          "nullable": false,
+          "type": "DECIMAL(10, 2)",
+          "type_info": {
+            "name": "DECIMAL",
+            "params": [
+              10,
+              2
+            ]
+          }
+        },
+        {
+          "collation": null,
+          "generated": false,
+          "has_default": false,
+          "identity": null,
+          "name": "in_stock",
+          "nullable": false,
+          "type": "BOOLEAN",
+          "type_info": {
+            "name": "BOOLEAN",
+            "params": []
+          }
+        }
+      ],
+      "foreign_keys": [
+        {
+          "backfill_eligible": false,
+          "columns": [
+            "category_id"
+          ],
+          "deferrable": false,
+          "ineligible_reasons": {
+            "category_id": [
+              "NOT NULL"
+            ]
+          },
+          "initially_deferred": false,
+          "match": "simple",
+          "name": null,
+          "optional": false,
+          "references": {
+            "columns": [
+              "id"
+            ],
+            "table": "categories"
+          }
+        }
+      ],
+      "primary_key": [
+        "id"
+      ],
+      "unique_columns": [
+        "id",
+        "sku"
+      ],
+      "unique_combinations": [],
+      "unique_keys": [
+        {
+          "columns": [
+            "sku"
+          ],
+          "nulls_distinct": true
+        }
+      ]
+    }
+  },
+  "tool": "dcloneb 0.2.0"
+}

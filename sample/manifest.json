@@ -1,0 +1,341 @@
+{
+  "backfills": [
+    {
+      "foreign_key": [
+        "manager_id"
+      ],
+      "null_columns": [
+        "manager_id"
+      ],
+      "references": "employees",
+      "retained_columns": [],
+      "rows_filled": 21,
+      "table": "employees"
+    }
+  ],
+  "config": {
+    "default_rows": 25,
+    "seed": 42
+  },
+  "constraints_not_evaluated": [
+    "triggers",
+    "functions and procedures",
+    "views",
+    "row-level security policies",
+    "anything outside the declared PK/UNIQUE/FK/NOT NULL/type constraints"
+  ],
+  "csv_format": {
+    "boolean": "true/false",
+    "date": "YYYY-MM-DD",
+    "decimal": "plain notation with exactly the column's scale, never an exponent",
+    "delimiter": ",",
+    "empty_string": "\"\"",
+    "encoding": "utf-8 (no BOM)",
+    "escape": "\"\" inside a quoted field",
+    "header": true,
+    "integer": "plain digits",
+    "line_terminator": "\\n",
+    "load_hint": "COPY <table> FROM '<file>' WITH (FORMAT csv, HEADER true)",
+    "null": "unquoted empty field",
+    "quote": "\"",
+    "timestamp": "YYYY-MM-DD HH:MM:SS (no time zone)",
+    "uuid": "lowercase hyphenated"
+  },
+  "dependencies": {
+    "faker": "40.43.0",
+    "polars": "2.0.0",
+    "python": "3.12.12",
+    "sqlglot": "30.22.0"
+  },
+  "generator": "dcloneb 0.2.0",
+  "plan_hooks_applied": [
+    "apply_business_rules"
+  ],
+  "plan_sha256": "019cba320357517e1708a07c5bc06446f433bba6ea548d4b73cf6296d315f3b4",
+  "resolved": {
+    "locale": "en_US",
+    "null_probability": 0.1,
+    "rows": {
+      "categories": 25,
+      "customers": 25,
+      "employees": 25,
+      "order_items": 25,
+      "orders": 25,
+      "products": 25
+    },
+    "seed": 42
+  },
+  "rules": {
+    "engine_version": 1,
+    "ids": [
+      "customer_email",
+      "mostly_in_stock",
+      "positive_price",
+      "positive_unit_price",
+      "sensible_quantity",
+      "served_cities"
+    ],
+    "sha256": "c4ace8faa1a95a4ccbee590121bbbe76881fb2ad345bc753d236b6c2720dadb7",
+    "source_sha256": "3fed5ce6b5b28fb80b4639b0e9b5fa4becff8af67941747dfc8bfa4add11158c"
+  },
+  "seed": 42,
+  "tables": {
+    "categories": {
+      "columns": [
+        {
+          "csv": "integer digits",
+          "name": "id",
+          "type": "SERIAL"
+        },
+        {
+          "csv": "UTF-8 text",
+          "name": "name",
+          "type": "VARCHAR(40)"
+        }
+      ],
+      "file": "csv/categories.csv",
+      "forced_nulls": {},
+      "identity_columns": [
+        {
+          "kind": "serial",
+          "name": "id",
+          "needs_overriding_system_value": false
+        }
+      ],
+      "inferred_columns": {
+        "name": "kind.category_name"
+      },
+      "rows": 25,
+      "ruled_columns": {}
+    },
+    "customers": {
+      "columns": [
+        {
+          "csv": "integer digits",
+          "name": "id",
+          "type": "SERIAL"
+        },
+        {
+          "csv": "UTF-8 text",
+          "name": "email",
+          "type": "VARCHAR(100)"
+        },
+        {
+          "csv": "UTF-8 text",
+          "name": "first_name",
+          "type": "VARCHAR(50)"
+        },
+        {
+          "csv": "UTF-8 text",
+          "name": "last_name",
+          "type": "VARCHAR(50)"
+        },
+        {
+          "csv": "UTF-8 text",
+          "name": "city",
+          "type": "VARCHAR(50)"
+        },
+        {
+          "csv": "YYYY-MM-DD",
+          "name": "signed_up",
+          "type": "DATE"
+        }
+      ],
+      "file": "csv/customers.csv",
+      "forced_nulls": {},
+      "identity_columns": [
+        {
+          "kind": "serial",
+          "name": "id",
+          "needs_overriding_system_value": false
+        }
+      ],
+      "inferred_columns": {
+        "first_name": "faker.first_name",
+        "last_name": "faker.last_name"
+      },
+      "rows": 25,
+      "ruled_columns": {
+        "city": [
+          "served_cities"
+        ],
+        "email": [
+          "customer_email"
+        ]
+      }
+    },
+    "employees": {
+      "columns": [
+        {
+          "csv": "integer digits",
+          "name": "id",
+          "type": "SERIAL"
+        },
+        {
+          "csv": "UTF-8 text",
+          "name": "first_name",
+          "type": "VARCHAR(50)"
+        },
+        {
+          "csv": "UTF-8 text",
+          "name": "last_name",
+          "type": "VARCHAR(50)"
+        },
+        {
+          "csv": "integer digits",
+          "name": "manager_id",
+          "type": "INT"
+        }
+      ],
+      "file": "csv/employees.csv",
+      "forced_nulls": {},
+      "identity_columns": [
+        {
+          "kind": "serial",
+          "name": "id",
+          "needs_overriding_system_value": false
+        }
+      ],
+      "inferred_columns": {
+        "first_name": "faker.first_name",
+        "last_name": "faker.last_name"
+      },
+      "rows": 25,
+      "ruled_columns": {}
+    },
+    "order_items": {
+      "columns": [
+        {
+          "csv": "integer digits",
+          "name": "order_id",
+          "type": "INT"
+        },
+        {
+          "csv": "integer digits",
+          "name": "product_id",
+          "type": "INT"
+        },
+        {
+          "csv": "integer digits",
+          "name": "quantity",
+          "type": "SMALLINT"
+        },
+        {
+          "csv": "plain decimal, exactly 2 fraction digits",
+          "name": "unit_price",
+          "type": "DECIMAL(10, 2)"
+        }
+      ],
+      "file": "csv/order_items.csv",
+      "forced_nulls": {},
+      "identity_columns": [],
+      "inferred_columns": {},
+      "rows": 25,
+      "ruled_columns": {
+        "quantity": [
+          "sensible_quantity"
+        ],
+        "unit_price": [
+          "positive_unit_price"
+        ]
+      }
+    },
+    "orders": {
+      "columns": [
+        {
+          "csv": "integer digits",
+          "name": "id",
+          "type": "SERIAL"
+        },
+        {
+          "csv": "integer digits",
+          "name": "customer_id",
+          "type": "INT"
+        },
+        {
+          "csv": "integer digits",
+          "name": "handled_by",
+          "type": "INT"
+        },
+        {
+          "csv": "YYYY-MM-DD HH:MM:SS",
+          "name": "placed_at",
+          "type": "TIMESTAMP"
+        },
+        {
+          "csv": "lowercase hyphenated UUID",
+          "name": "tracking_id",
+          "type": "UUID"
+        }
+      ],
+      "file": "csv/orders.csv",
+      "forced_nulls": {},
+      "identity_columns": [
+        {
+          "kind": "serial",
+          "name": "id",
+          "needs_overriding_system_value": false
+        }
+      ],
+      "inferred_columns": {},
+      "rows": 25,
+      "ruled_columns": {}
+    },
+    "products": {
+      "columns": [
+        {
+          "csv": "integer digits",
+          "name": "id",
+          "type": "SERIAL"
+        },
+        {
+          "csv": "UTF-8 text",
+          "name": "sku",
+          "type": "CHAR(8)"
+        },
+        {
+          "csv": "UTF-8 text",
+          "name": "name",
+          "type": "VARCHAR(80)"
+        },
+        {
+          "csv": "integer digits",
+          "name": "category_id",
+          "type": "INT"
+        },
+        {
+          "csv": "plain decimal, exactly 2 fraction digits",
+          "name": "price",
+          "type": "DECIMAL(10, 2)"
+        },
+        {
+          "csv": "true/false",
+          "name": "in_stock",
+          "type": "BOOLEAN"
+        }
+      ],
+      "file": "csv/products.csv",
+      "forced_nulls": {},
+      "identity_columns": [
+        {
+          "kind": "serial",
+          "name": "id",
+          "needs_overriding_system_value": false
+        }
+      ],
+      "inferred_columns": {
+        "name": "kind.product_name"
+      },
+      "rows": 25,
+      "ruled_columns": {
+        "in_stock": [
+          "mostly_in_stock"
+        ],
+        "price": [
+          "positive_price"
+        ]
+      }
+    }
+  },
+  "validation": "passed"
+}
