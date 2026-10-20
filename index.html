@@ -1,0 +1,214 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>dcloneb: test data from your schema</title>
+<meta name="description" content="Realistic, valid test data from a PostgreSQL schema or your Databricks tables, generated on your computer. Ask Claude for it in plain English.">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="hero">
+  <div class="wrap">
+    <p class="badge">dcloneb 0.5.0</p>
+    <h1>Test data from your database schema.<br>Just ask Claude.</h1>
+    <p class="lead">Describe the data you need in plain English. dcloneb builds valid CSVs on your computer, keeping every key unique,
+      every reference real, and every rule you set. Start from a schema file, or type <b>connect</b> to use your Databricks tables.</p>
+    <p class="actions"><a class="button primary" href="#start">Get started</a><a class="button" href="#databricks">Use with Databricks</a><a class="button" href="#example">See an example</a></p>
+  </div>
+</header>
+
+<main class="wrap">
+
+<section class="flow" aria-label="How it works">
+  <div class="step"><span class="num">1</span><h3>Install</h3><p>A few commands, once. It connects to Claude Desktop or Claude Code.</p></div>
+  <div class="step"><span class="num">2</span><h3>Ask Claude</h3><p>&ldquo;Make 50 rows per table from schema.sql, prices between 1 and 500.&rdquo;</p></div>
+  <div class="step"><span class="num">3</span><h3>Approve</h3><p>Check the summary in your browser, click Approve, and the CSVs appear in your folder.</p></div>
+</section>
+
+<section id="start">
+  <h2>Get started</h2>
+  <p class="muted">About 5 minutes, on macOS or Windows. You need Claude: the
+    <a href="https://claude.ai/download">desktop app</a> or Claude Code. Open a terminal (macOS: Terminal; Windows:
+    PowerShell) and follow the steps.</p>
+  <ol class="workflow">
+    <li><div class="wf-step"><h3>Get uv</h3>
+      <p>uv is a free installer for Python tools. Skip this if you already have it.</p>
+      <p>macOS:</p>
+      <pre class="code">curl -LsSf https://astral.sh/uv/install.sh | sh</pre>
+      <p>Windows (PowerShell):</p>
+      <pre class="code">powershell -ExecutionPolicy ByPass -c "irm https://astral.sh/uv/install.ps1 | iex"</pre>
+      <p>Then close the terminal and open a new one.</p></div></li>
+    <li><div class="wf-step"><h3>Install dcloneb</h3>
+      <pre class="code">uv tool install &quot;dcloneb[mcp] @ https://anjk15.github.io/dcloneb-site/downloads/dcloneb-0.5.0-py3-none-any.whl&quot;</pre>
+      <p>Using Databricks? Install this one instead:</p>
+      <pre class="code">uv tool install &quot;dcloneb[mcp,databricks] @ https://anjk15.github.io/dcloneb-site/downloads/dcloneb-0.5.0-py3-none-any.whl&quot;</pre></div></li>
+    <li><div class="wf-step"><h3>Check the version</h3>
+      <pre class="code">dcloneb --version</pre>
+      <p>It should print <code>dcloneb 0.5.0</code>.</p></div></li>
+    <li><div class="wf-step"><h3>Connect Claude</h3>
+      <p>Pick the Claude you use. This creates your workspace folder, <code>~/dcloneb-workspace</code>.</p>
+      <div class="apps">
+        <div class="app">
+          <h3>Claude Desktop app</h3>
+          <p class="muted">Best for most people. You approve with a click in your browser, and Claude can't skip it.</p>
+          <p>Quit Claude Desktop first (Cmd+Q on macOS, or File, Exit on Windows), then run:</p>
+          <pre class="code">dcloneb mcp install --workspace ~/dcloneb-workspace
+dcloneb mcp test</pre>
+          <p>Open Claude Desktop again.</p>
+        </div>
+        <div class="app">
+          <h3>Claude Code (terminal or VS Code)</h3>
+          <p class="muted">For developers. Everything happens in your terminal or editor.</p>
+          <pre class="code">dcloneb mcp install --client claude-code --workspace ~/dcloneb-workspace
+dcloneb mcp test --client claude-code</pre>
+          <p>Start a new Claude Code session.</p>
+          <p class="note">Approval is a guardrail here: Claude Code can also run shell commands, so watch what it proposes.</p>
+        </div>
+      </div></div></li>
+    <li><div class="wf-step"><h3>Ask for data</h3>
+      <p>Put your <code>schema.sql</code> in <code>~/dcloneb-workspace</code>, start a new chat, and ask:
+        <q>Use the dcloneb tools to make 20 rows per table from schema.sql in my dcloneb workspace.</q>
+        Approve the summary, and your CSVs appear in <code>~/dcloneb-workspace/&lt;name&gt;/csv/</code>.</p></div></li>
+  </ol>
+  <div class="apps">
+    <div class="app">
+      <h3>Already installed?</h3>
+      <p>To get version 0.5.0, run step 2 again, then step 3 to check. Restart Claude afterwards. Your workspace and
+        settings stay as they are.</p>
+    </div>
+    <div class="app">
+      <h3>If something goes wrong</h3>
+      <ul class="plain">
+        <li><code>command not found</code>: run <code>uv tool update-shell</code>, then open a new terminal.</li>
+        <li>Claude doesn't see dcloneb: quit Claude completely, run <code>dcloneb mcp test</code>, and open Claude again.</li>
+        <li>Still stuck? Run <code>dcloneb mcp test</code> and share what it prints.</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section id="databricks">
+  <h2>Use with Databricks</h2>
+  <p class="muted">Make test data shaped like your real tables, without copying a single real row. You talk to Claude;
+    dcloneb does the work.</p>
+  <p class="muted">Just type <b>connect</b> and answer a few short questions. Most answers are just a number.</p>
+  <ol class="workflow">
+    <li><div class="wf-step"><h3>Sign in</h3>
+      <p>Set up as in <a href="#start">Get started</a>, using the Databricks install in step 2. Then sign in once with
+        the Databricks CLI. dcloneb never sees your password or token.</p>
+      <pre class="code">uv tool install &quot;dcloneb[mcp,databricks] @ https://anjk15.github.io/dcloneb-site/downloads/dcloneb-0.5.0-py3-none-any.whl&quot;
+databricks auth login --profile dev</pre></div></li>
+    <li><div class="wf-step"><h3>Type connect</h3>
+      <p class="chat"><b>You:</b> connect</p>
+      <p class="chat"><b>Claude:</b> Which catalog? 1. main 2. samples</p>
+      <p>Then the schema and the tables. Where there is only one choice (one warehouse, say), it is picked for you.</p></div></li>
+    <li><div class="wf-step"><h3>dcloneb looks at your data</h3>
+      <p>It reads a sample of the tables you picked, using fixed read-only queries. Before it reads any actual values it asks:</p>
+      <p class="chat"><b>Claude:</b> May dcloneb read the values of accounts.status? <b>You:</b> yes</p></div></li>
+    <li><div class="wf-step"><h3>Review the rules</h3>
+      <p>You get one numbered list: <q>2. balance is 0 to 25,000</q>, <q>4. when status is CLOSED, balance is 0
+        (all 90 closed accounts had 0)</q>. These are suggestions until you keep them.</p>
+      <p class="chat"><b>You:</b> delete 3, make 2 0 to 10,000</p></div></li>
+    <li><div class="wf-step"><h3>Describe the data</h3>
+      <p class="chat"><b>Claude:</b> Describe the data you want: how many rows, and any specific records or edge cases.</p>
+      <p class="chat"><b>You:</b> 20 customers with one account each, plus one closed account with balance 500 to test quarantine.</p></div></li>
+    <li><div class="wf-step"><h3>Approve and get your files</h3>
+      <p>Check the plain-English summary, click Approve, and the CSVs appear in your workspace folder. The report says
+        every rule held, apart from the one negative test you asked for.</p></div></li>
+    <li><div class="wf-step"><h3>Change anything</h3>
+      <p class="chat"><b>Claude:</b> Anything to change, add, or remove? <b>You:</b> make it 50, and add a customer with no accounts.</p>
+      <p>You approve <q>Changes since generated: customers 21 → 52</q>. The new files go to generated-2, and the first folder stays as it was.</p></div></li>
+    <li><div class="wf-step"><h3>Push to Databricks</h3>
+      <p class="chat"><b>You:</b> push it to Databricks. <b>Claude:</b> Where? 1. it_test (new schema, recommended) 2. sandbox</p>
+      <p>Optional. You approve once, and dcloneb creates the tables, loads them, and checks every row count and link.</p></div></li>
+  </ol>
+  <div class="apps">
+    <div class="app">
+      <h3>What you get</h3>
+      <ul class="plain">
+        <li>One CSV per table, with every reference pointing at a real row.</li>
+        <li>A report: every rule holds, except the bad rows you asked for.</li>
+        <li>A folder that gives the exact same files when you run it again.</li>
+      </ul>
+    </div>
+    <div class="app">
+      <h3>Safe by design</h3>
+      <ul class="plain">
+        <li>Reading uses only fixed, read-only queries.</li>
+        <li>It writes to Databricks only after you approve a push, and only into a new schema or one you pick. It
+          never replaces tables and never touches your source schema.</li>
+        <li>It reads a sample, so its figures are estimates.</li>
+        <li>Your data is generated on your computer.</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section id="example">
+  <h2>Example</h2>
+  <p class="muted">Real output for a small online shop: 6 tables, 6 business rules, 25 rows each.</p>
+  <h4>products</h4><div class="table-scroll"><table id="preview-products"><thead><tr><th>id</th><th>sku</th><th>name</th><th>category_id</th><th>price</th><th>in_stock</th></tr></thead><tbody><tr><td>1</td><td>00000000</td><td>Copper Water Bottle</td><td>8</td><td>458.36</td><td>true</td></tr><tr><td>2</td><td>00000001</td><td>Steel Yoga Mat</td><td>1</td><td>301.09</td><td>true</td></tr><tr><td>3</td><td>00000002</td><td>Compact Phone Case</td><td>21</td><td>104.85</td><td>true</td></tr><tr><td>4</td><td>00000003</td><td>Glass Headphones</td><td>21</td><td>211.06</td><td>true</td></tr></tbody></table></div><h4>order_items</h4><div class="table-scroll"><table id="preview-order_items"><thead><tr><th>order_id</th><th>product_id</th><th>quantity</th><th>unit_price</th></tr></thead><tbody><tr><td>25</td><td>9</td><td>7</td><td>312.70</td></tr><tr><td>7</td><td>23</td><td>8</td><td>320.29</td></tr><tr><td>9</td><td>4</td><td>9</td><td>47.50</td></tr><tr><td>7</td><td>20</td><td>2</td><td>275.19</td></tr></tbody></table></div>
+  <p class="downloads">
+    <a class="button primary" href="sample/dcloneb-shop-sample.zip">Download the example (zip)</a>
+    <a class="button" href="sample/schema.sql">schema.sql</a>
+    <a class="button" href="sample/rules.json">rules.json</a>
+  </p>
+</section>
+
+<section id="details">
+  <h2>Good to know</h2>
+  <details>
+    <summary>Your data and privacy</summary>
+    <p>Data is generated on your computer and files stay on your computer, inside your workspace folder;
+      dcloneb will never overwrite a file. Nothing is generated until you click <strong>Approve</strong> on a page served only on 127.0.0.1
+      (it works once and expires in 10 minutes). Claude sees your schema, rules, and summaries, so those reach your
+      model provider; generated values are shared only if you ask Claude to preview rows.</p>
+  </details>
+  <details>
+    <summary>What's supported</summary>
+    <h4>Column types</h4>
+    <p class="chips"><code>SMALLINT</code> <code>INT</code> <code>BIGINT</code> <code>TINYINT</code> <code>SMALLSERIAL</code> <code>SERIAL</code> <code>BIGSERIAL</code> <code>DECIMAL</code> <code>FLOAT</code> <code>DOUBLE</code> <code>BOOLEAN</code> <code>VARCHAR</code> <code>TEXT</code> <code>CHAR</code> <code>DATE</code> <code>TIMESTAMP</code> <code>TIMESTAMPNTZ</code> <code>TIMESTAMPTZ</code> <code>UUID</code></p>
+    <h4>Business rules</h4>
+    <table><thead><tr><th>Rule</th><th>Meaning</th></tr></thead><tbody><tr><td><code>range</code></td><td>the value is &gt;= / &gt; min and &lt;= / &lt; max (whichever bounds are given), compared exactly; timestamps in UTC</td></tr><tr><td><code>allowed_values</code></td><td>the value is one of `values` (decimals by value, text exact and case-sensitive)</td></tr><tr><td><code>format</code></td><td>the value matches the format; only `email` (the documented strict ASCII syntax)</td></tr><tr><td><code>id_format</code></td><td>version 2: the value is `prefix` followed by exactly `digits` characters from `characters` (digits by default, or upper, upper_digits), like ACC-00042</td></tr><tr><td><code>value_kind</code></td><td>a generation guide for what the values are (product names, cities, ...); checked as non-empty text that fits</td></tr><tr><td><code>conditional</code></td><td>when `when.column` equals `when.equals`, `then.column` must equal `then.equals` (same table, equality only)</td></tr><tr><td><code>null_rate</code></td><td>a generation setting: the share of rows left NULL (not a constraint)</td></tr></tbody></table>
+    <h4>Not supported yet (refused with a clear reason)</h4>
+    <ul><li>FKs sharing child columns with another FK <small>(`overlapping_foreign_keys`)</small></li><li>CHECK <small>(`check_constraint`)</small></li><li>generated columns <small>(`generated_column`)</small></li><li>partial or expression unique indexes, table properties <small>(`unsupported_plan_diagnostic`)</small></li><li>triggers, functions, views, row-level security <small>(the CSVs satisfy declared constraints only)</small></li></ul>
+    <h4>Limits</h4>
+    <p>Up to 100,000 rows per table and 1,000,000 in total by default.</p>
+  </details>
+  <details>
+    <summary>Databricks: the fine print</summary>
+    <p>dcloneb reads table metadata, then runs aggregate queries over a sample (100,000 rows by default). A query that runs
+      too long is cancelled on the warehouse. It reads category values (like status names) only for columns you approve.
+      Sign-in stays with the Databricks CLI: no token reaches Claude, logs, or files.</p>
+  </details>
+  <details>
+    <summary>Databricks permissions (the fewest needed)</summary>
+    <table><thead><tr><th>To</th><th>Grant</th></tr></thead><tbody>
+      <tr><td>Read your tables</td><td><code>USE CATALOG</code> on the catalog; <code>USE SCHEMA</code> and
+        <code>SELECT</code> on the schema; <code>CAN USE</code> on the SQL warehouse</td></tr>
+      <tr><td>Push into a new schema</td><td><code>USE CATALOG</code> and <code>CREATE SCHEMA</code> on the target catalog</td></tr>
+      <tr><td>Push into an existing schema</td><td><code>USE SCHEMA</code>, <code>CREATE TABLE</code> and
+        <code>CREATE VOLUME</code> on that schema (plus <code>USE CATALOG</code>)</td></tr>
+    </tbody></table>
+    <p>dcloneb owns what it creates, so it needs no MODIFY and nothing on your source beyond reading. If a permission
+      is missing, Claude shows the exact <code>GRANT</code> statements for an admin. Best: push with a separate
+      Databricks CLI profile, such as a service principal, that has only these grants.</p>
+  </details>
+  <details>
+    <summary>Scenarios and bad rows (negative tests)</summary>
+    <p>Scenarios let you ask for exact rows. The rows you name keep their values and links, and every other row follows all
+      the rules. A row breaks a rule only if you ask for it as a negative test, and the report lists it. The report also
+      says the pipeline outcome is <em>not verified by dcloneb</em>: you load the files and check your pipeline yourself.</p>
+  </details>
+  <details>
+    <summary>Use it without Claude</summary>
+    <pre class="code">dcloneb make schema.sql --rules rules.json --rows 100</pre>
+  </details>
+</section>
+
+</main>
+<footer class="wrap"><p>dcloneb 0.5.0 &middot; PostgreSQL and Databricks schemas &middot; Claude Desktop on macOS and Windows</p></footer>
+</body>
+</html>

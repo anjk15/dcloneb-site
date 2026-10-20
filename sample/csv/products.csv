@@ -1,0 +1,26 @@
+id,sku,name,category_id,price,in_stock
+1,00000000,Copper Water Bottle,8,458.36,true
+2,00000001,Steel Yoga Mat,1,301.09,true
+3,00000002,Compact Phone Case,21,104.85,true
+4,00000003,Glass Headphones,21,211.06,true
+5,00000004,Mini Headphones,12,322.60,true
+6,00000005,Smart Candle,23,93.23,true
+7,00000006,Cotton Keyboard,17,371.16,true
+8,00000007,Portable Backpack,20,2.06,true
+9,00000008,Deluxe Candle,16,220.99,true
+10,00000009,Vintage Speaker,1,65.88,true
+11,0000000a,Vintage Yoga Mat,25,191.15,true
+12,0000000b,Wireless Bike Light,6,495.91,true
+13,0000000c,Cotton Speaker,18,220.20,true
+14,0000000d,Organic Chair,12,114.33,true
+15,0000000e,Glass Keyboard,25,234.79,true
+16,0000000f,Compact Cutting Board,13,208.44,true
+17,0000000g,Smart Picture Frame,7,239.94,true
+18,0000000h,Premium Bike Light,17,33.60,true
+19,0000000i,Classic Desk Lamp,4,77.62,true
+20,0000000j,Leather Notebook,12,111.93,true
+21,0000000k,Classic Chair,5,480.72,true
+22,0000000l,Mini Yoga Mat,4,207.68,true
+23,0000000m,Bamboo Desk Lamp,9,46.50,true
+24,0000000n,Organic Keyboard,18,310.01,true
+25,0000000o,Leather Candle,8,389.31,true
